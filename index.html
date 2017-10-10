@@ -1,5 +1,6 @@
 <html>
 	<head>
+		<meta charset="UTF-8"/>
 		<style>
 			#global {border: 1px solid black; margin: 0 auto;height: 100%;}
 			#tabla 	{border: 1px solid red; margin: 0 auto; height: 80%; width: 80%;}
@@ -11,54 +12,15 @@
 		<div id="global">
 			<h1> MEMORI	</h1>
 				<div id="tabla">
-						<div class="cartas">
-						
-						
-						</div>
-						<div class="cartas">
-						
-						
-						</div>
-						<div class="cartas">
-						
-						
-						</div>
-						<div class="cartas">
-						
-						
-						</div>
-						<div class="cartas">
-						
-						
-						</div>
-						<div class="cartas">
-						
-						
-						</div>
-						<div class="cartas">
-						
-						
-						</div>
-						<div class="cartas">
-						
-						
-						</div>
-						<div class="cartas">
-						
-						
-						</div>
-						<div class="cartas">
-						
-						
-						</div>
-						<div class="cartas">
-						
-						
-						</div>
-						<div class="cartas">
-						
-						
-						</div>
+					<form action="joc.php" method="POST">
+						Escoge el tamaño de la tabla: 
+						<select name="valor">
+							<option value="8">4 x 4</option>
+							<option value="10">5 x 5</option>
+							<option value="12">6 x 6</option>
+							<input type="submit"/>
+						</select>
+					</form>
 				</div>
 		</div>	
 	</body>
