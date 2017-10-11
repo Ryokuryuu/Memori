@@ -5,14 +5,31 @@
 			#global {border: 1px solid black; margin: 0 auto;height: 100%;}
 			#tabla 	{border: 1px solid red; margin: 0 auto; height: 80%; width: 80%;}
 			h1 {text-align: center;}
-			.cartas {border: 1px solid green; margin: 17px; height: 42%;width: 13%; }
+			span {display: block; clear: both;}
+			img {height: 50%;width: 50%;}
+			.cartas {border: 1px solid green; margin: 1%;height: 30%;width: 13%;float:left;}
+			.rotar {border: 1px solid green; margin: 1%;height: 30%;width: 13%;float:left;transform: rotateY(180deg);}
+			
 		</style>
+		<script>
+		var rotar = false;
+		function rotar(){
+			if(rotar == false){
+				document.getElementById('cartas').ClassName.replace('rotar');
+				rotar = true;
+				}
+			else{
+				document.getElementById('rotar').ClassName.replace('cartas');
+				rotar = false;
+				}
+			}
+		</script>
 		
 	</head>
 	<body>
 		<div id="global">
 			<h1> MEMORI	</h1>
-			<table id="tabla">
+			<div id="tabla">
 					<?php
 					$val = $_POST["valor"];
 
@@ -20,9 +37,9 @@
 						for($i=1;$i<=2;$i++){				
 							for($j=1;$j<=5;$j++){
 								if($j > 4){
-									echo "<tr></tr> \n";
+									echo "<span></span> \n";
 								}else{
-									echo "<td class='cartas'></td>\n";			
+									echo "<div class='cartas'><img  id='imagen' src='yo.png' onClick=rotar()/></div>\n";			
 								}
 							}	
 						}
@@ -31,9 +48,9 @@
 						for($i=1;$i<=2;$i++){				
 							for($j=1;$j<=6;$j++){
 								if($j > 5){
-									echo "<tr></tr> \n";
+									echo "<span></span> \n";
 								}else{
-									echo "<td class='cartas'></td>\n";			
+									echo "<div class='cartas'> <img  id='imagen' src='yo.png' onClick=rotar()/> </div>\n";			
 								}
 							}	
 						}
@@ -42,9 +59,9 @@
 						for($i=1;$i<=2;$i++){				
 							for($j=1;$j<=7;$j++){
 								if($j > 6){
-									echo "<tr></tr> \n";
+									echo "<span></span> \n";
 								}else{
-									echo "<td class='cartas'></td>\n";			
+									echo "<div class='cartas'><img id='imagen' src='yo.png' onClick=rotar()/></div>\n";			
 								}
 							}	
 						}
@@ -52,7 +69,7 @@
 					
 					
 					?>
-			</table>
+			</div>
 		</div>	
 	</body>
 </html>
