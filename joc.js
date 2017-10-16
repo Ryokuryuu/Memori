@@ -1,8 +1,8 @@
 function flip(event){
-	var carta = event.currentTarget.className;
-	if(carta != "flip-container"){
-		carta.currentTarget.setAttribute("class","flip-container");
+	var clase = event.currentTarget.className;
+	if(clase != 'flip-container'){
+		event.currentTarget.setAttribute('class','flip-container');
 	}else{
-		carta.currentTarget.setAttribute("class","flip");
+		event.currentTarget.setAttribute('class','flip');
 	}
 }
