@@ -19,7 +19,7 @@
 									echo "<tr></tr> \n";
 								}else{
 									echo "<td>
-											<div class='flip-container' onclick='flip(event)'>
+											<div class='flip-container' onClick='flip(event)'>
 												<div class='flipper'>
 													<div class='front'>
 														<img src='yo.png'/>
@@ -41,7 +41,7 @@
 									echo "<tr></tr> \n";
 								}else{
 									echo "<td>
-											<div class='flip-container' onclick='flip(event)'>
+											<div class='flip-container' onClick='flip(event)'>
 												<div class='flipper'>
 													<div class='front'>
 														<img src='yo.png'/>
@@ -63,7 +63,7 @@
 									echo "<tr></tr> \n";
 								}else{
 									echo "<td>
-											<div class='flip-container' onclick='flip(event)'>
+											<div class='flip-container' onClick='flip(event)'>
 												<div class='flipper'>
 													<div class='front'>
 														<img src='yo.png'/>
