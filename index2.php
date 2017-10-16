@@ -1,14 +1,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8"/>
-		<style>
-			#global {border: 1px solid black; margin: 0 auto;height: 100%;}
-			#tabla 	{border: 1px solid red; margin: 0 auto; height: 80%; width: 90%;}
-			h1 {text-align: center;}
-			.imagen {border: 1px solid green;background-color:green; height: 36%; width: 10%;float: left; margin: 3%;}
-			.rotar {border: 1px solid blue; height: 36%; width: 10%;float: left; margin: 3%;}
-			
-		</style>
+		<link rel="stylesheet" type="text/css" href="estilo.css">		
 		<script>
 		function rotar(b){
 			var imagen = document.getElementById(b.id);
@@ -25,13 +18,31 @@
 	<body>
 		<div id="global"> 
 			<h1> MEMORI	</h1>
-				<div id="tabla" onload=setImagen()>
+				<table id="tabla">
 					<?php 
-						for($i=1;$i<=12;$i++){
-							echo "<div class='imagen' id=$i onClick=rotar(this)> </div> \n";
-						}
+					$fila = 1;
+					for($i=1;$i<=12;$i++){
+						if($fila <= 6){	
+							echo "<td>
+									<div class='flip-container' ontouchstart='this.classList.toggle('hover');'>
+										<div class='flipper'>
+											<div class='front'>
+												<img src='yo.png'/>
+											</div>
+											<div class='back'>
+												<img src='guapo.jpg'/>
+											</div>
+										</div>
+									</div>
+								</td>";
+								$fila++;
+						 }else{
+							echo "<tr></tr>";
+							$fila = 1;
+						 }
+					}
 					?>
-				</div>
+				</table>
 		</div>	
 	</body>
 </html>
