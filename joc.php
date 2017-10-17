@@ -22,6 +22,8 @@
 					
 					
 					//se decide el tamaño que ha escogido el usuario anteriormente en el html
+					
+					
 					if($val == 8){
 						//creamos con 4 imagenes una array y luego la ordenamos random
 						$random = array();
@@ -96,7 +98,7 @@
 							
 						}
 						shuffle($random);
-			
+						echo "<a id='prueba'>";
 						for($i=1;$i<=2;$i++){				
 							for($j=0;$j<=6;$j++){
 								if($j == 6){
@@ -112,16 +114,15 @@
 													</div>
 													<div class='back'>
 														<img src='$random[$j]'/>
+														
 													</div>
 												</div>
 											</div>
-										</td>";			
+										</td>";		
 								}
 							}	
 						}
 					} 
-					
-					
 					?>
 			</table>
 		</div>	
