@@ -4,5 +4,5 @@ function flip(event){
 		event.currentTarget.setAttribute('class','flip-container');
 	}else{
 		event.currentTarget.setAttribute('class','flip');
-	}
+}
 }
