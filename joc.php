@@ -22,7 +22,7 @@
 											<div class='flip-container' onclick='flip(event)'>
 												<div class='flipper'>
 													<div class='front'>
-														<img src='yo.png'/>
+														<img src='backside.png'/>
 													</div>
 													<div class='back'>
 														<img src='guapo.jpg'/>
@@ -44,7 +44,7 @@
 											<div class='flip-container' onclick='flip(event)'>
 												<div class='flipper'>
 													<div class='front'>
-														<img src='yo.png'/>
+														<img src='backside.png'/>
 													</div>
 													<div class='back'>
 														<img src='guapo.jpg'/>
@@ -66,7 +66,7 @@
 											<div class='flip-container' onclick='flip(event)'>
 												<div class='flipper'>
 													<div class='front'>
-														<img src='yo.png'/>
+														<img src='backside.png'/>
 													</div>
 													<div class='back'>
 														<img src='guapo.jpg'/>
