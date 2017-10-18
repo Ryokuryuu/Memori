@@ -1,5 +1,5 @@
-#global {border: 1px solid black; margin: 0 auto;height: 100%;}
-#tabla 	{border: 1px solid red; margin: 0 auto;}
+#global { margin: 0 auto;height: 100%;}
+#tabla 	{ margin: 0 auto;}
 h1 {text-align: center;}
 
 /*.imagen {border: 1px solid green;background-color:green; height: 36%; width: 10%;float: left; margin: 3%;}
