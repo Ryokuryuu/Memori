@@ -7,7 +7,7 @@
 	</head>
 	<body>
 		<div id="global">
-			<h1> MEMORI	</h1>
+			<h1> MEMORY	</h1>
 			<table id="tabla">
 					<?php
 					$val = $_POST["valor"];
