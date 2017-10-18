@@ -1,15 +1,16 @@
 function flip(event){
 	var clase = event.currentTarget.className;
-//	var carta1 = "";
-//	var carta2 = "";
+	var carta1 = "";
+	var carta2 = "";
 	
 //	if(carta1 == ""){
-//		carta1 = event.currentTarget;
+//		carta1 = clase;
 //		event.currentTarget.setAttribute('class','flip');
 //	}
 //	else if(carta1 != "" && carta2 == ""){
-//		carta2 = event.currentTarget;
+//		carta2 = clase;
 //		event.currentTarget.setAttribute('class','flip');
+//		
 //	}else if(carta1 != carta2){
 //		carta1.setAttribue('class','flip-container');
 //		carta2.setAttribue('class','flip-container');
