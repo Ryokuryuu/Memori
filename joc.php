@@ -123,6 +123,7 @@
 							}	
 						}
 					} 
+					echo "<a id='prueba'></a>";
 					?>
 			</table>
 		</div>	
