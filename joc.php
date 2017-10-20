@@ -32,30 +32,31 @@
 							
 						}
 						shuffle($random);
-					
+						
 						for($i=1;$i<=2;$i++){		
 							for($j=0;$j<=4;$j++){
-								if($j == 4){
-									//cuando haya una fila de 4 cartas, continua en la siguiente fila y además vuelve a desordenar la array
-									echo "<tr></tr> \n";
-									shuffle($random);
-								}else{
-									echo "<td>
-											<div class='flip-container' onclick='flip(event)'>
-												<div class='flipper'>
-													<div class='front'>
-														<img src='backside.png'/>
-													</div>
-													<div class='back'>
-														<img src='$random[$j]'/>
+									if($j == 4){
+										//cuando haya una fila de 4 cartas, continua en la siguiente fila y además vuelve a desordenar la array
+										echo "<tr></tr> \n";
+										shuffle($random);
+									}else{
+										
+										echo "<td>
+												<div class='flip-container' id='$random[$j]' onclick='flip(event)'>
+													<div class='flipper'>
+														<div class='front'>
+															<img src='backside.png'/>
+														</div>
+														<div class='back'>
+															<img src='$random[$j]'/>
+														</div>
 													</div>
 												</div>
-											</div>
-										</td>";			
+											</td>";			
+									}
 								}
 							}
 						}
-					}
 					
 					//creamos con 5 imagenes una array y luego la ordenamos random
 					else if($val == 10){
@@ -74,7 +75,7 @@
 									shuffle($random);
 								}else{
 									echo "<td>
-											<div class='flip-container' onclick='flip(event)'>
+											<div id='$j' class='flip-container' onclick='flip(event)'>
 												<div class='flipper'>
 													<div class='front'>
 														<img src='backside.png'/>
@@ -107,7 +108,7 @@
 									shuffle($random);
 								}else{
 									echo "<td>
-											<div class='flip-container' onclick='flip(event)'>
+											<div id='$j' class='flip-container' onclick='flip(event)'>
 												<div class='flipper'>
 													<div class='front'>
 														<img src='backside.png'/>
