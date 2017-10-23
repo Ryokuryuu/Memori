@@ -15,12 +15,12 @@ function flip(event,parell){
 		carta2 = event.currentTarget;
 		carta2.setAttribute('class','flip');
 		document.getElementById('prueba').innerHTML = "Intentos: " + intentos;	
-		document.getElementById('prueba').value = intentos;	
+		
 		
 	}else{
 		if(iguales == parell){
 			alert('has ganado');
-
+			habilitaBoton();
 		}else{
 			//comprobamos las cartas
 			setTimeout(comprobar(carta1,carta2),5000);					
@@ -36,16 +36,15 @@ function comprobar(a,b){
 		b.setAttribute('class','flip-container');
 
 	}else{
+	//si son iguales, cambiamos el atributo onclick para que no se vuelva a ejecutar y de esta manera no se vuelva a girar la carta
 		a.setAttribute('onclick','nada');
 		b.setAttribute('onclick','nada');
 		iguales = iguales + 1;
 	}
 	
+	//sumamos los intentos y volvemos a inicialicar las variables carta1 y carta2
 	intentos = intentos + 1;
 	carta1="";
 	carta2="";
 }
-
-
-
 

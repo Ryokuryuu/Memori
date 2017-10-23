@@ -10,7 +10,6 @@
 			<h1> MEMORY	</h1>
 			<table id="tabla">
 					<?php
-					$nom = $_POST["name"];
 					$val = $_POST["valor"];
 					$file = fopen("datos.txt","w");
 					
@@ -128,8 +127,16 @@
 							}	
 						}
 					} 
-					echo "<a id='prueba' value=''>Intentos: </a>";
-					echo "<input type='button'>Guardar fputs($file,$nom) </input>";
+					echo "<p id='prueba'> Intentos: </p>";
+					echo "<form action='ranking.php' method='POST'>
+						   <input type='text' name='name' required placeholder='Introduece tu nombre:' autofocus /></br>
+						   <input type='submit' id='boton'/> 
+					
+					
+					</form>";
+					
+					
+					// echo "<input type='button'>Guardar fwrite($file,$nom) </input>";
 					?>
 			</table>
 		</div>	
