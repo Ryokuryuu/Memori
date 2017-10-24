@@ -5,10 +5,13 @@
 		<script src="joc.js" language="javascript" type="text/javascript"> </script>
 		
 	</head>
-	<body>
-		<div id="global">
+	<body onload="carga()">
+		<div id="global" >
 			<h1> MEMORY	</h1>
 			<table id="tabla">
+			 <p>
+				<span id="min">0</span>min  <span id="seg">0</span>seg
+			</p>
 					<?php
 					$val = $_POST["valor"];
 					$file = fopen("datos.txt","w");
@@ -34,7 +37,7 @@
 							
 						}
 						shuffle($random);
-						
+						$count = 0;
 						for($i=1;$i<=2;$i++){		
 							for($j=0;$j<=4;$j++){
 									if($j == 4){
@@ -42,9 +45,8 @@
 										echo "<tr></tr> \n";
 										shuffle($random);
 									}else{
-										
 										echo "<td>
-												<div class='flip-container' id='$random[$j]' onclick='flip(event,4)'>
+												<div class='flip-container' cartaid='".$count."'  id='$random[$j]' onclick='flip(event,4)'>
 													<div class='flipper'>
 														<div class='front'>
 															<img src='backside.png'/>
@@ -55,6 +57,7 @@
 													</div>
 												</div>
 											</td>";			
+									$count++;
 									}
 								}
 							}
@@ -127,6 +130,7 @@
 							}	
 						}
 					} 
+					echo "<input type='button' onclick='ayuda()' value='Pista'> </input>";
 					echo "<p id='intent'> Intentos: </p>";
 					echo "<p id='acert'> Aciertos: </p>";
 					echo "<form action='ranking.php' method='POST'>
