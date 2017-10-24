@@ -2,48 +2,50 @@ var carta1 = "";
 var carta2 = "";
 var iguales = 1;
 var intentos = 1;
-
+var prueba = [];
 
 function flip(event,parell){
 	//guardamos la primera carta
 	if(carta1 == ""){
 		carta1 = event.currentTarget;
 		carta1.setAttribute('class','flip');	
-	
+		prueba.push(carta1);
 	}else if( carta2 == ""){
 	//guardamos la segunda carta
 		carta2 = event.currentTarget;
 		carta2.setAttribute('class','flip');
-		document.getElementById('prueba').innerHTML = "Intentos: " + intentos;	
+		document.getElementById('intent').innerHTML = "Intentos: " + intentos;	
+		prueba.push(carta2);
 		
-		
-	}else{
-		if(iguales == parell){
-			alert('has ganado');
-			habilitaBoton();
-		}else{
-			//comprobamos las cartas
-			setTimeout(comprobar(carta1,carta2),5000);					
-		}
 	}
 	
-}
-
-function comprobar(a,b){
 	//si son distintas, se vuelven a girar las cartas
-	if(a.id != b.id){
-		a.setAttribute('class','flip-container');
-		b.setAttribute('class','flip-container');
-
-	}else{
-	//si son iguales, cambiamos el atributo onclick para que no se vuelva a ejecutar y de esta manera no se vuelva a girar la carta
-		a.setAttribute('onclick','nada');
-		b.setAttribute('onclick','nada');
-		iguales = iguales + 1;
+	if(prueba.length == 2){
+		if(carta1.id != carta2.id){
+			setTimeout(girarCartas,1000);
+		}else{
+			//si son iguales, cambiamos el atributo onclick para que no se vuelva a ejecutar y de esta manera no se vuelva a girar la carta
+			carta1.setAttribute("class","flip");
+			carta2.setAttribute("class","flip");
+			carta1.removeAttribute("onclick");
+			carta2.removeAttribute("onclick");
+			iguales = iguales + 1;
+			prueba=[];
+			carta1="";
+			carta2="";
+		}
 	}
 	
 	//sumamos los intentos y volvemos a inicialicar las variables carta1 y carta2
 	intentos = intentos + 1;
+
+	
+}
+
+function girarCartas(){
+	carta1.setAttribute('class','flip-container');
+	carta2.setAttribute('class','flip-container');
+	prueba=[];
 	carta1="";
 	carta2="";
 }

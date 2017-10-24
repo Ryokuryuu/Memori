@@ -127,7 +127,8 @@
 							}	
 						}
 					} 
-					echo "<p id='prueba'> Intentos: </p>";
+					echo "<p id='intent'> Intentos: </p>";
+					echo "<p id='acert'> Aciertos: </p>";
 					echo "<form action='ranking.php' method='POST'>
 						   <input type='text' name='name' required placeholder='Introduece tu nombre:' autofocus /></br>
 						   <input type='submit' id='boton'/> 
