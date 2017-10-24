@@ -3,8 +3,15 @@ var carta2 = "";
 var iguales = 1;
 var intentos = 1;
 var prueba = [];
+var audio1 = new Audio('sounds/girar.WAV');
+var audio2 = new Audio('sounds/fallar.WAV');
+
+
+
+
 
 function flip(event,parell){
+	audio1.play();
 	//guardamos la primera carta
 	if(carta1 == ""){
 		carta1 = event.currentTarget;
@@ -43,6 +50,7 @@ function flip(event,parell){
 }
 
 function girarCartas(){
+	audio2.play();
 	carta1.setAttribute('class','flip-container');
 	carta2.setAttribute('class','flip-container');
 	prueba=[];
