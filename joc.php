@@ -132,20 +132,20 @@
 							}	
 						}
 					} 
-					echo "<input type='button' id='ayuda' onclick='ayuda()' value='Pistas: 3'> </input>";
-					echo "<p id='intent'> Intentos: </p>";
-					echo "<p id='acert'> Aciertos: </p>";
-					echo "<form action='ranking.php' method='POST'>
-						   <input type='text' name='name' required placeholder='Introduece tu nombre:' autofocus /></br>
-						   <input type='submit' id='boton'/> 
-					
-					
-					</form>";
-					
 					
 					// echo "<input type='button'>Guardar fwrite($file,$nom) </input>";
 					?>
 			</table>
+			<?php
+				echo "<input type='button' id='ayuda' onclick='ayuda()' value='Pistas: 3'> </input>";
+				echo "<form action='ranking.php' method='POST'>
+						Intentos:
+					    <input type='text' id='intent' name='intentos' value=0 > </input>;
+				        <p id='acert'> Aciertos: </p>
+						<input type='text' name='name' required placeholder='Introduece tu nombre:' autofocus /></br>
+						<input type='submit' id='boton'/> 
+				      </form>";
+			?>	
 		</div>	
 	</body>
 </html>

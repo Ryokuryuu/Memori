@@ -4,7 +4,7 @@ var iguales = 0;
 var crono;
 
 var contadorPista = 3;
-var intentos = 1;
+var intentos = 0;
 var arrayObjetos = [];
 var cartasGiradas = [];
 
@@ -89,6 +89,7 @@ function sumarPuntos(){
 function ganador(){
 	//esta función muestra un alert de que ha ganado y detiene el cronómetro
 	alert('has ganado');
+	document.getElementById('intent').value = intentos;
 	detenerse();
 }
 
@@ -127,7 +128,8 @@ function ayuda(){
 	var clase = [];
 
 	if(contadorPista >= 1){
-		
+		intentos = intentos + 5;
+		document.getElementById('intent').innerHTML = "Intentos: " + intentos;	
 		clase = document.getElementsByName("carta");
 		
 		for(i=0;i<clase.length;i++){
