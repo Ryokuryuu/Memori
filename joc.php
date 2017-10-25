@@ -15,7 +15,7 @@
 					<?php
 					$val = $_POST["valor"];
 					$file = fopen("datos.txt","w");
-					
+					$count = 0;
 					
 					//creamos una array con las imagenes y luego las ordenamos aleatoriamente
 					$imagenes = array();
@@ -37,7 +37,7 @@
 							
 						}
 						shuffle($random);
-						$count = 0;
+		
 						for($i=1;$i<=2;$i++){		
 							for($j=0;$j<=4;$j++){
 									if($j == 4){
@@ -46,7 +46,7 @@
 										shuffle($random);
 									}else{
 										echo "<td>
-												<div class='flip-container' cartaid='".$count."'  id='$random[$j]' onclick='flip(event,4)'>
+												<div class='flip-container' name='carta'  id='$random[$j]' onclick='flip(event,4)'>
 													<div class='flipper'>
 														<div class='front'>
 															<img src='backside.png'/>
@@ -81,7 +81,7 @@
 									shuffle($random);
 								}else{
 									echo "<td>
-											<div class='flip-container' id='$random[$j]'  onclick='flip(event,5)'>
+											<div class='flip-container' name='carta' id='$random[$j]'  onclick='flip(event,5)'>
 												<div class='flipper'>
 													<div class='front'>
 														<img src='backside.png'/>
@@ -91,7 +91,8 @@
 													</div>
 												</div>
 											</div>
-										</td>";			
+										</td>";	
+								$count++;		
 								}
 							}	
 						}
@@ -114,7 +115,7 @@
 									shuffle($random);
 								}else{
 									echo "<td>
-											<div  class='flip-container' id='$random[$j]'  onclick='flip(event,6)'>
+											<div  class='flip-container' name='carta' id='$random[$j]'  onclick='flip(event,6)'>
 												<div class='flipper'>
 													<div class='front'>
 														<img src='backside.png'/>
@@ -125,12 +126,13 @@
 													</div>
 												</div>
 											</div>
-										</td>";		
+										</td>";	
+								$count++;	
 								}
 							}	
 						}
 					} 
-					echo "<input type='button' onclick='ayuda()' value='Pista'> </input>";
+					echo "<input type='button' id='ayuda' onclick='ayuda()' value='Pistas: 3'> </input>";
 					echo "<p id='intent'> Intentos: </p>";
 					echo "<p id='acert'> Aciertos: </p>";
 					echo "<form action='ranking.php' method='POST'>

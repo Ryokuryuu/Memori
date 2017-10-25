@@ -3,7 +3,7 @@ var carta2 = "";
 var iguales = 0;
 var crono;
 
-
+var contadorPista = 3;
 var intentos = 1;
 var arrayObjetos = [];
 var cartasGiradas = [];
@@ -124,7 +124,29 @@ function carga()
 }
 
 function ayuda(){
+	var clase = [];
 
+	if(contadorPista >= 1){
+		
+		clase = document.getElementsByName("carta");
+		
+		for(i=0;i<clase.length;i++){
+			var prueba = clase[i].getAttribute("class");
+			if(prueba == 'flip-container'){
+				clase[i].setAttribute("class","flip");
+			}
+		}
+		contadorPista --;
+		document.getElementById('ayuda').value = "Pistas: " + contadorPista;
+		setTimeout(function(){
+				for(i=0;i<clase.length;i++){
+				var prueba = clase[i].getAttribute("onclick");
+				if(prueba != null){
+					clase[i].setAttribute("class","flip-container");
+				}
+			}
+		},2000);
+	}
 }
 
 
