@@ -14,7 +14,6 @@
 			</p>
 					<?php
 					$val = $_POST["valor"];
-					$file = fopen("datos.txt","w");
 					$count = 0;
 					
 					//creamos una array con las imagenes y luego las ordenamos aleatoriamente
@@ -46,7 +45,7 @@
 										shuffle($random);
 									}else{
 										echo "<td>
-												<div class='flip-container' name='carta'  id='$random[$j]' onclick='flip(event,4)'>
+												<div class='flip-container' name='carta'  id='$random[$j]' onclick='flip(event,".($val/2).")'>
 													<div class='flipper'>
 														<div class='front'>
 															<img src='backside.png'/>
@@ -81,7 +80,7 @@
 									shuffle($random);
 								}else{
 									echo "<td>
-											<div class='flip-container' name='carta' id='$random[$j]'  onclick='flip(event,5)'>
+											<div class='flip-container' name='carta' id='$random[$j]'  onclick='flip(event,".($val/2).")'>
 												<div class='flipper'>
 													<div class='front'>
 														<img src='backside.png'/>
@@ -115,7 +114,7 @@
 									shuffle($random);
 								}else{
 									echo "<td>
-											<div  class='flip-container' name='carta' id='$random[$j]'  onclick='flip(event,6)'>
+											<div  class='flip-container' name='carta' id='$random[$j]'  onclick='flip(event,".($val/2).")'>
 												<div class='flipper'>
 													<div class='front'>
 														<img src='backside.png'/>
@@ -132,8 +131,6 @@
 							}	
 						}
 					} 
-					
-					// echo "<input type='button'>Guardar fwrite($file,$nom) </input>";
 					?>
 			</table>
 			<?php
