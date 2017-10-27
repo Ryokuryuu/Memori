@@ -14,7 +14,6 @@
 			</p>
 					<?php
 					$val = $_POST["valor"];
-					$file = fopen("datos.txt","w");
 					$count = 0;
 					
 					//creamos una array con las imagenes y luego las ordenamos aleatoriamente
@@ -142,7 +141,6 @@
 				        <p id='acert'> Aciertos: </p>
 						<input type='text' name='name' required placeholder='Introduece tu nombre:' autofocus /></br>
 						<input type='submit' id='boton'/> 
-						<input type='button' value='Guardar'> fwrite($file,$nom) </input>
 				      </form>";
 			?>	
 		</div>	

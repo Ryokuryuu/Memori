@@ -35,6 +35,7 @@ function flip(event,pareja){
 			
 		//sumamos los intentos 
 		intentos = intentos + 1;
+		document.getElementById('intent').value = intentos;
 		
 	}
 
@@ -98,7 +99,6 @@ function ganador(){
 	//esta función muestra un alert de que ha ganado y detiene el cronómetro y el botón de ayuda y cambia el valor de intent por la variable intentos
 	alert('has ganado');
 	document.getElementById('ayuda').disabled = true;
-	document.getElementById('intent').value = intentos;
 	detenerse();
 }
 
