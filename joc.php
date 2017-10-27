@@ -46,7 +46,7 @@
 										shuffle($random);
 									}else{
 										echo "<td>
-												<div class='flip-container' name='carta'  id='$random[$j]' onclick='flip(event,4)'>
+												<div class='flip-container' name='carta'  id='$random[$j]' onclick='flip(event,".($val/2).")'>
 													<div class='flipper'>
 														<div class='front'>
 															<img src='backside.png'/>
@@ -81,7 +81,7 @@
 									shuffle($random);
 								}else{
 									echo "<td>
-											<div class='flip-container' name='carta' id='$random[$j]'  onclick='flip(event,5)'>
+											<div class='flip-container' name='carta' id='$random[$j]'  onclick='flip(event,".($val/2).")'>
 												<div class='flipper'>
 													<div class='front'>
 														<img src='backside.png'/>
@@ -115,7 +115,7 @@
 									shuffle($random);
 								}else{
 									echo "<td>
-											<div  class='flip-container' name='carta' id='$random[$j]'  onclick='flip(event,6)'>
+											<div  class='flip-container' name='carta' id='$random[$j]'  onclick='flip(event,".($val/2).")'>
 												<div class='flipper'>
 													<div class='front'>
 														<img src='backside.png'/>
@@ -132,8 +132,6 @@
 							}	
 						}
 					} 
-					
-					// echo "<input type='button'>Guardar fwrite($file,$nom) </input>";
 					?>
 			</table>
 			<?php
@@ -144,6 +142,7 @@
 				        <p id='acert'> Aciertos: </p>
 						<input type='text' name='name' required placeholder='Introduece tu nombre:' autofocus /></br>
 						<input type='submit' id='boton'/> 
+						<input type='button' value='Guardar'> fwrite($file,$nom) </input>
 				      </form>";
 			?>	
 		</div>	

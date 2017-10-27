@@ -1,3 +1,4 @@
+//variables globales
 var carta1 = "";
 var carta2 = "";
 var iguales = 0;
@@ -8,13 +9,14 @@ var intentos = 0;
 var arrayObjetos = [];
 var cartasGiradas = [];
 
+//variables que contienen los sonidos del juego
 var audio1 = new Audio('sounds/girar.WAV');
 var audio2 = new Audio('sounds/fallar.WAV');
 var audio3 = new Audio('sounds/ganar.WAV');
 
 
 
-
+//evento que hace girar las cartas
 function flip(event,pareja){
 	audio1.play();
 	//guardamos la primera carta
@@ -32,9 +34,10 @@ function flip(event,pareja){
 		arrayObjetos.push(carta2);
 		
 	}
-	
+
+	//si la array contiene 2 elementos (es decir, 2 cartas) 
+	if(arrayObjetos.length == 2){	
 	//si son distintas, se vuelven a girar las cartas
-	if(arrayObjetos.length == 2){
 		if(carta1.id != carta2.id){
 			setTimeout(girarCartas,1000);
 		}else{
@@ -47,17 +50,21 @@ function flip(event,pareja){
 	//sumamos los intentos 
 	intentos = intentos + 1;
 
-	//en caso de que todas las cartas sean iguales se ejecuta la función ganador
+	//la variable pareja contiene la cantidad de parejas que contiene la tabla, 
+	//en caso de que la variable iguales sea igual a pareja se ejecuta la función ganador
 	if(pareja == iguales){
 		ganador();
 	
 	}
 }
 
+
 function girarCartas(){
+	//esta función ejecuta un sonido al girar la carta y cambia la clase de ese objeto
 	audio2.play();
 	carta1.setAttribute('class','flip-container');
 	carta2.setAttribute('class','flip-container');
+	//inicializamos de nuevo las variables y la array a cero
 	arrayObjetos=[];
 	carta1="";
 	carta2="";
@@ -65,7 +72,7 @@ function girarCartas(){
 
 function sumarPuntos(){
 		//ejecuta el audio correspondiente a que ha acertado la pareja
-		//y quita el onclic de ese objeto
+		//y quita el onclic de esos objetos
 		audio3.play();
 		carta1.setAttribute("class","flip");
 		carta1.removeAttribute("onclick");
@@ -76,6 +83,7 @@ function sumarPuntos(){
 		//la variable iguales suma uno cada vez que se da con una pareja y printa en pantalla las parejas que tiene
 		iguales = iguales + 1;
 		document.getElementById('acert').innerHTML = "Aciertos: " + iguales;	
+		//y guardamos el name "cartaid" que contiene ese objeto en una array
 		cartasGiradas.push(carta1.getAttribute("cartaid"));
 		cartasGiradas.push(carta2.getAttribute("cartaid"));
 		
@@ -87,8 +95,9 @@ function sumarPuntos(){
 }
 
 function ganador(){
-	//esta función muestra un alert de que ha ganado y detiene el cronómetro
+	//esta función muestra un alert de que ha ganado y detiene el cronómetro y el botón de ayuda y cambia el valor de intent por la variable intentos
 	alert('has ganado');
+	document.getElementById('ayuda').disabled = true;
 	document.getElementById('intent').value = intentos;
 	detenerse();
 }
@@ -127,27 +136,37 @@ function carga()
 function ayuda(){
 	var clase = [];
 
+	//si la variable contadorPista es mayor o igual a 1 se ejecutará la función
 	if(contadorPista >= 1){
+		//la función suma 5 intentos y los printa por pantalla
 		intentos = intentos + 5;
 		document.getElementById('intent').innerHTML = "Intentos: " + intentos;	
 		clase = document.getElementsByName("carta");
 		
+		//en este for comprueba cada carta y su clase
 		for(i=0;i<clase.length;i++){
 			var prueba = clase[i].getAttribute("class");
+			//en el caso de que la carta contenga como clase 'flip-container' le dará la vuelta
 			if(prueba == 'flip-container'){
 				clase[i].setAttribute("class","flip");
 			}
 		}
+		
+		//a la variable contadorPista se le resta 1 y se printa cuantas le quedan
 		contadorPista --;
 		document.getElementById('ayuda').value = "Pistas: " + contadorPista;
+		
+		//pasado 3 segundos todas las cartas que se habían girado, vuelven a darse la vuelta
 		setTimeout(function(){
+				//obtiene el atributo onclick de cada carta
 				for(i=0;i<clase.length;i++){
 				var prueba = clase[i].getAttribute("onclick");
+				//en caso de que ese atributo no se le haya eliminado, se les volverá a dar la vuelta
 				if(prueba != null){
 					clase[i].setAttribute("class","flip-container");
 				}
 			}
-		},2000);
+		},3000);
 	}
 }
 
