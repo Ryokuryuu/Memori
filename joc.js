@@ -32,6 +32,9 @@ function flip(event,pareja){
 		carta2.setAttribute('class','flip');
 		document.getElementById('intent').innerHTML = "Intentos: " + intentos;	
 		arrayObjetos.push(carta2);
+			
+		//sumamos los intentos 
+		intentos = intentos + 1;
 		
 	}
 
@@ -46,9 +49,6 @@ function flip(event,pareja){
 			
 		}
 	}
-	
-	//sumamos los intentos 
-	intentos = intentos + 1;
 
 	//la variable pareja contiene la cantidad de parejas que contiene la tabla, 
 	//en caso de que la variable iguales sea igual a pareja se ejecuta la función ganador
