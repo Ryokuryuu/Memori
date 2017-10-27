@@ -88,7 +88,7 @@ function sumarPuntos(){
 
 function ganador(){
 	//esta función muestra un alert de que ha ganado y detiene el cronómetro
-	alert('has ganado');
+	alert('Has ganado');
 	document.getElementById('intent').value = intentos;
 	detenerse();
 }
