@@ -2,24 +2,35 @@
 	<head>
 		<meta charset="UTF-8"/>
 		<style>
-			#global {margin: 0 auto;height: 100%;}
+			body{background-image: url("fondo.gif"); width: 1275px; height: 700px;}
+			#global {margin: 0 auto;height: 100%; ;}
 			#tabla 	{margin: 0 auto; height: 80%; width: 80%;}
-			h1 {text-align: center;}
-			img {height: 20%; width: 10%;}
+			<--h1 {text-align: center; text-shadow: 2px 2px #00b8e6; font-family: "sans-serif"}-->
+			h2 {text-align: center;font-family: "sans-serif"; display:inline; padding-left: 210px; }
+			#centrar{text-align: center;}
+			#mevoy{margin: 0 auto;}
+			#bocata{display: inline; float:right;padding-right: 300px;}
+			img{border-radius:20px;}
+			input{margin: 0 auto; float: right;}
 		</style>
 	</head>
 	<body>
 		<div id="global"> 
-			<h1> MEMORY	</h1>
+			<div id="centrar"><img src="panel.png"/></div>
+			
 				<div id="tabla">
+					
 					<form action="joc.php" method="POST">
-						Escoge el tamaño de la tabla: 
-						<select name="valor">
+						<h2>Escoge el tamaño de la tabla: </h2>
+						<select id="mevoy"name="valor">
 							<option value="8"> 4 columnas x 2 filas</option>
 							<option value="10">5 columnas x 2 filas</option>
 							<option value="12">6 columnas x 2 filas</option>
-							<input type="submit"/>
 						</select>
+						</br>
+						<div id="bocata"><img src="bocadillo.png"></div>
+						<input type="image" src="boton4.gif" width=200px height=200px;/>
+							
 					</form>
 				</div>
 		</div>	
