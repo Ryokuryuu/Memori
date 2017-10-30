@@ -101,7 +101,10 @@ function ganador(){
 	document.getElementById('intent').value = intentos;
 	// OJOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
 	//document.getElementById('ayuda').disabled = true;
+	
+	document.getElementById('boton').disabled = false;
 	detenerse();
+	
 }
 
 function detenerse(){	

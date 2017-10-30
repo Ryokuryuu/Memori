@@ -35,7 +35,7 @@
 							$random[$p] = $imagenes[$p];
 							
 						}
-						shuffle($random);
+						shuffle($random);	
 		
 						for($i=1;$i<=2;$i++){		
 							for($j=0;$j<=4;$j++){
@@ -140,7 +140,7 @@
 					    <input type='text' id='intent' name='intentos' value=0 > </input>
 				        <p id='acert'> Aciertos: </p>
 						<input type='text' name='name' required placeholder='Introduece tu nombre:' autofocus /></br>
-						<input type='submit' id='boton'/> 
+						<input type='submit' name='boton' id='boton' disabled/> 
 				      </form>";
 			?>	
 		</div>	
