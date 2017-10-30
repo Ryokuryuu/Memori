@@ -137,9 +137,9 @@
 				echo "<input type='button' id='ayuda' onclick='ayuda()' value='Pistas: 3'> </input>";
 				echo "<form action='ranking.php' method='POST'>
 						Intentos:
-					    <input type='text' id='intent' name='intentos' value=0 > </input>
+					    <input type='text' id='intent' name='intentos' value=0 readonly> </input>
 				        <p id='acert'> Aciertos: </p>
-						<input type='text' name='name' required placeholder='Introduece tu nombre:' autofocus /></br>
+						<input type='text' name='name' required placeholder='Introduece tu nombre:' autofocus/></br>
 						<input type='submit' name='boton' id='boton' disabled/> 
 				      </form>";
 			?>	
