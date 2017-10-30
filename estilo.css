@@ -4,7 +4,8 @@ h1 {text-align: center;}
 
 /*.imagen {border: 1px solid green;background-color:green; height: 36%; width: 10%;float: left; margin: 3%;}
 .rotar {border: 1px solid blue; height: 36%; width: 10%;float: left; margin: 3%;}*/
-
+#panel{text-align: center;}
+#dontmove{width:530;height:222;}
 .flip-container {
 	perspective: 1000px;
 }

@@ -7,7 +7,7 @@
 	</head>
 	<body onload="carga()">
 		<div id="global" >
-			<h1> MEMORY	</h1>
+			<div id="panel"><img id="dontmove" src="panel2.png"/></div>
 			<table id="tabla">
 			 <p>
 				<span id="min">0</span>min  <span id="seg">0</span>seg
