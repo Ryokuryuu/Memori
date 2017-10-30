@@ -134,7 +134,7 @@
 					?>
 			</table>
 			<?php
-				echo "<input type='button' id='ayuda' onclick='ayuda()' value='Pistas: 3'> </input>";
+				echo "<input type='image' src='botonsito.png' id='ayuda' onclick='ayuda()' value='3'> </input>";
 				echo "<form action='ranking.php' method='POST'>
 						Intentos:
 					    <input type='text' id='intent' name='intentos' value=0 readonly> </input>
