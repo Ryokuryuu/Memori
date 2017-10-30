@@ -4,14 +4,21 @@
 		<style>
 			td{border: 1px solid black;border-radius: 5px;}
 			h1{text-align: center;}
-			#propio{float:left;border: 1px solid red;}
+			
+			#general{width: 570px;margin: 0 auto;}
+			#tabla1,#tabla2{float:left}
+			h3{padding-left: 35px;}
 			table{margin: 0 auto;}
+			
 		</style>
 	</head>
 	<body>
 		<div id="global"> 
 			<h1> MEMORY	</h1>
+			<div id="general">
 				<?php		
+				$nombre="";
+				
 				if(isset($_POST['boton'])){
 					
 					$intentos = $_POST['intentos'];	
@@ -37,38 +44,39 @@
 				}
 				
 				sort($arrayPrueba);
-				
-					echo "<table>";
-						echo "<th>puntuación</th>";
-						echo "<th>nombre</th>";
-						echo "<tr></tr>";
-						for($i=0;$i<sizeof($arrayPrueba);$i++){
-							echo "<td>".$arrayPrueba[$i][0]."</td>";
-							echo "<td>".$arrayPrueba[$i][1]."</td>";
+					echo "<div id='tabla1'>";
+						echo "<h3>RANKING MUNDIAL</h3>";
+						echo "<table>";
+							echo "<th>puntuación</th>";
+							echo "<th>nombre</th>";
 							echo "<tr></tr>";
-						}				
-					echo "</table>";
-					
-	
-					echo "<table>";
-						echo "<th>puntuación</th>";
-						echo "<th>nombre</th>";
-						echo "<tr></tr>";
-						
-						echo $nombre."<br>";
-						
-						for($i=0;$i<sizeof($arrayPrueba);$i++){
-							
-							echo $arrayPrueba[$i][1]."<br>";
-							if(strcmp($nombre,$arrayPrueba[$i][1]) == 0){
-								
+							for($i=0;$i<sizeof($arrayPrueba);$i++){
 								echo "<td>".$arrayPrueba[$i][0]."</td>";
 								echo "<td>".$arrayPrueba[$i][1]."</td>";
 								echo "<tr></tr>";
-							}
-						}				
-					echo "</table>";
-					
+							}				
+						echo "</table>";
+					echo "</div>";
+	
+	
+					echo "<div id='tabla2'>";
+						echo "<h3>RANKING PERSONAL</h3>";
+						echo "<table>";
+							echo "<th>puntuación</th>";
+							echo "<th>nombre</th>";
+							echo "<tr></tr>";
+						
+							
+							for($i=0;$i<sizeof($arrayPrueba);$i++){
+								if(strcmp($nombre,trim($arrayPrueba[$i][1])) == 0){
+									
+									echo "<td>".$arrayPrueba[$i][0]."</td>";
+									echo "<td>".$arrayPrueba[$i][1]."</td>";
+									echo "<tr></tr>";
+								}
+							}				
+						echo "</table>";
+					echo "</div>";
 				
 				fclose($file);
 				?>
