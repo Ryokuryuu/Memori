@@ -5,7 +5,7 @@
 		<script src="joc.js" language="javascript" type="text/javascript"> </script>
 		
 	</head>
-	<body onload="carga()">
+	<body>
 		<div id="global" >
 			<div id="panel"><img id="dontmove" src="panel2.png"/></div>
 			<table id="tabla">
