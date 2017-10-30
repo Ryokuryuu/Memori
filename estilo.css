@@ -1,6 +1,7 @@
 body{background-image: url("fondo.gif");}
 #global {margin: 0 auto;height: 100%;}
-#tabla 	{margin: 0 auto;}
+#ayuda{float:left; padding-top:100px;}
+#tabla 	{margin: 0 auto; padding-right:300px;}
 h1 {text-align: center;}
 
 /*.imagen {border: 1px solid green;background-color:green; height: 36%; width: 10%;float: left; margin: 3%;}
