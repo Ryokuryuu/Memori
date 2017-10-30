@@ -8,11 +8,13 @@
 	<body>
 		<div id="global" >
 			<div id="panel"><img id="dontmove" src="panel2.png"/></div>
+			
 			<table id="tabla">
 			 <p>
 				<span id="min">0</span>min  <span id="seg">0</span>seg
 			</p>
 					<?php
+					echo "<input type='image' src='botonsito.png' id='ayuda' onclick='ayuda()' value='3'> </input>";
 					$val = $_POST["valor"];
 					$count = 0;
 					
@@ -134,7 +136,7 @@
 					?>
 			</table>
 			<?php
-				echo "<input type='image' src='botonsito.png' id='ayuda' onclick='ayuda()' value='3'> </input>";
+				
 				echo "<form action='ranking.php' method='POST'>
 						Intentos:
 					    <input type='text' id='intent' name='intentos' value=0 readonly> </input>
