@@ -5,7 +5,7 @@
 		<script src="joc.js" language="javascript" type="text/javascript"> </script>
 		
 	</head>
-	<body>
+	<body onload="carga()">
 		<div id="global" >
 			<div id="panel"><img id="dontmove" src="panel2.png"/></div>
 			<EMBED SRC="sounds/Doh_De_Oh.wav" HIDDEN="true" AUTOSTART="true" LOOP="true">
