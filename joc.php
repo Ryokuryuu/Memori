@@ -8,7 +8,7 @@
 	<body>
 		<div id="global" >
 			<div id="panel"><img id="dontmove" src="panel2.png"/></div>
-			
+			<EMBED SRC="sounds/Doh_De_Oh.wav" HIDDEN="true" AUTOSTART="true" LOOP="true">
 			<table id="tabla">
 			 <p>
 				<span id="min">0</span>min  <span id="seg">0</span>seg
